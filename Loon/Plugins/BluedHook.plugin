@@ -1,6 +1,6 @@
 #!name=Blued基友--Eric全网独发
 #!desc=隐私相册，默认悄悄查看，地图找人次数到期，地图显示头像和去除部分广告,全球随意修改定位等功能，转载请注明出处,免费分享禁止转卖
-#!icon=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/icons/change_iconB%403x.png
+#!icon=https://raw.githubusercontent.com/kevinmattew/RemoveAds/refs/heads/main/Loon/icons/change_iconB%403x.png
 #!keyword=Blued_Chat
 #!author = Mr.Eric[https://t.me/Mr_Alex]
 #!openUrl = 
@@ -29,9 +29,9 @@ URL-REGEX,https://social.blued.cn/users/.*/joy,REJECT
 URL-REGEX,^https:\/\/social\.blued\.cn\/users\/recommend$,REJECT
 
 [Script]
-http-response ^https:\/\/.*\/users.*(setting|is_living=false|more/ios|flash|shadow|fair/exchange/count|\?aaid=|basic|map|\?column=) script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_vip.js, requires-body=true, enable = {arg1}, tag=blued_VIP
+http-response ^https:\/\/.*\/users.*(setting|is_living=false|more/ios|flash|shadow|fair/exchange/count|\?aaid=|basic|map|\?column=) script-path=https://raw.githubusercontent.com/kevinmattew/RemoveAds/refs/heads/main/Loon/JS/bld_vip.js, requires-body=true, enable = {arg1}, tag=blued_VIP
 
-http-request https://((social|argo).blued.cn|\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b)/(users.*extra_info=|ticktocks/users|groups/nearby|users/selection|ticktocks/popups|ticktocks/info|ticktocks/banner).* script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_location.js, enable = {arg2}, tag=blued_location, argument=[{customLatitude},{customLongitude},{customCity},{AK},{sortBy},{useCity},{useCoordinates},{mapSearchEnabled}]
+http-request https://((social|argo).blued.cn|\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b)/(users.*extra_info=|ticktocks/users|groups/nearby|users/selection|ticktocks/popups|ticktocks/info|ticktocks/banner).* script-path=https://raw.githubusercontent.com/kevinmattew/RemoveAds/refs/heads/main/Loon/JS/bld_location.js, enable = {arg2}, tag=blued_location, argument=[{customLatitude},{customLongitude},{customCity},{AK},{sortBy},{useCity},{useCoordinates},{mapSearchEnabled}]
 
 http-response https://api.finka.cn/vas/nearby/v2 script-path=https://gist.githubusercontent.com/Alex0510/85c95aeaf2283ab825702d27ed229a54/raw/Finka.js, requires-body=true, enable = {arg3}, tag=翻咔查看pic
 
